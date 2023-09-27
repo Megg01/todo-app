@@ -1,0 +1,263 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+    --black-1: #646681;
+    --black-2: #363636;
+    --bk-cntnr: #ecedf6;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem 2rem;
+    text-align: center;
+    width: 90%;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+a:hover {
+    color: #535bf2;
+}
+
+body {
+    margin: 0;
+    display: flex;
+
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+.button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #646ff0;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+.button:hover {
+    border-color: floralwhite;
+}
+.button:focus,
+.button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color: #213547;
+        background-color: #ffffff;
+    }
+    a:hover {
+        color: #747bff;
+    }
+    .button {
+        background-color: #f9f9f9;
+    }
+}
+
+.head-title {
+    font-size: 2.6em;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0.7em 0;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 90%;
+}
+
+.wrapper {
+    margin: 0 auto 0 auto;
+    max-width: 750px;
+    width: 100%;
+}
+
+.up-bar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter {
+    background-color: #1a1a1a;
+}
+
+.todo-container {
+    margin: 1rem 0 auto;
+    height: auto;
+    background-color: #f8f8ff;
+}
+
+.modal-wrapper {
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.modal {
+    height: 44vh;
+
+    background-color: #242424;
+    border: solid 1px floralwhite;
+    border-radius: 10px;
+
+    margin: 0;
+    position: relative;
+    padding: 1em 2em 1em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.modal-header {
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: 1em;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+.modal .buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    margin-top: 1.9em;
+}
+.modal .buttons :nth-child(2) {
+    background-color: var(--black-1);
+}
+
+.modal-close {
+    font-size: 1.3em;
+    position: absolute;
+    top: 0.7em;
+    right: 1vmin;
+
+    background-color: var(--black-2);
+    color: floralwhite;
+    display: flex;
+    justify-content: center;
+    padding: 0.2rem;
+    border-radius: 8px;
+
+    &:hover {
+        background-color: #e32525;
+        color: white;
+    }
+}
+
+#title,
+#status {
+    /* background-color: var(--white); */
+    /* border: none; */
+    font-size: 1rem;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    width: 100%;
+}
+
+.todo-container {
+    background-color: var(--bk-cntnr);
+    border-radius: 8px;
+    padding: 0.5em;
+}
+
+.todo-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.3rem 0.3em;
+    margin: 0.5rem;
+
+    background-color: #d4d5e3;
+    color: var(--black-2);
+
+    border-radius: 6px;
+    border: 1px solid rgb(173, 161, 161);
+}
+
+.todo-ct,
+.todo-de {
+    display: flex;
+
+    flex-direction: row;
+    align-items: center;
+}
+
+.todo-de {
+    gap: 1px;
+}
+
+.todo-de svg {
+    width: 2em;
+    height: 2em;
+    padding: 0 0.1em;
+}
+
+.todo-item .check-box {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.todo-item .title-date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1em 0;
+}
+
+.item-title {
+    font-size: 1em;
+}
+.item-date {
+    font-size: 0.8em;
+}
